@@ -1,0 +1,6 @@
+[submodule "ondewo-proto-compiler"]
+	path = ondewo-proto-compiler
+	url = git@github.com:ondewo/ondewo-proto-compiler.git
+[submodule "src/ondewo-survey-api"]
+	path = src/ondewo-survey-api
+	url = git@github.com:ondewo/ondewo-survey-api.git
