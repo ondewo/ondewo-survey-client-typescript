@@ -6,21 +6,17 @@
 
 // GENERATED CODE -- DO NOT EDIT!
 
-
 /* eslint-disable */
 // @ts-nocheck
-
-
 
 const grpc = {};
 grpc.web = require('grpc-web');
 
+var google_api_annotations_pb = require('../../google/api/annotations_pb.js');
 
-var google_api_annotations_pb = require('../../google/api/annotations_pb.js')
+var ondewo_survey_survey_pb = require('../../ondewo/survey/survey_pb.js');
 
-var ondewo_survey_survey_pb = require('../../ondewo/survey/survey_pb.js')
-
-var google_protobuf_struct_pb = require('google-protobuf/google/protobuf/struct_pb.js')
+var google_protobuf_struct_pb = require('google-protobuf/google/protobuf/struct_pb.js');
 const proto = {};
 proto.ondewo = {};
 proto.ondewo.survey = require('./fhir_pb.js');
@@ -33,23 +29,20 @@ proto.ondewo.survey = require('./fhir_pb.js');
  * @struct
  * @final
  */
-proto.ondewo.survey.FHIRClient =
-    function(hostname, credentials, options) {
-  if (!options) options = {};
-  options.format = 'binary';
+proto.ondewo.survey.FHIRClient = function (hostname, credentials, options) {
+	if (!options) options = {};
+	options.format = 'binary';
 
-  /**
-   * @private @const {!grpc.web.GrpcWebClientBase} The client
-   */
-  this.client_ = new grpc.web.GrpcWebClientBase(options);
+	/**
+	 * @private @const {!grpc.web.GrpcWebClientBase} The client
+	 */
+	this.client_ = new grpc.web.GrpcWebClientBase(options);
 
-  /**
-   * @private @const {string} The hostname
-   */
-  this.hostname_ = hostname;
-
+	/**
+	 * @private @const {string} The hostname
+	 */
+	this.hostname_ = hostname;
 };
-
 
 /**
  * @param {string} hostname
@@ -59,23 +52,20 @@ proto.ondewo.survey.FHIRClient =
  * @struct
  * @final
  */
-proto.ondewo.survey.FHIRPromiseClient =
-    function(hostname, credentials, options) {
-  if (!options) options = {};
-  options.format = 'binary';
+proto.ondewo.survey.FHIRPromiseClient = function (hostname, credentials, options) {
+	if (!options) options = {};
+	options.format = 'binary';
 
-  /**
-   * @private @const {!grpc.web.GrpcWebClientBase} The client
-   */
-  this.client_ = new grpc.web.GrpcWebClientBase(options);
+	/**
+	 * @private @const {!grpc.web.GrpcWebClientBase} The client
+	 */
+	this.client_ = new grpc.web.GrpcWebClientBase(options);
 
-  /**
-   * @private @const {string} The hostname
-   */
-  this.hostname_ = hostname;
-
+	/**
+	 * @private @const {string} The hostname
+	 */
+	this.hostname_ = hostname;
 };
-
 
 /**
  * @const
@@ -84,20 +74,19 @@ proto.ondewo.survey.FHIRPromiseClient =
  *   !proto.ondewo.survey.Survey>}
  */
 const methodDescriptor_FHIR_CreateFHIRSurvey = new grpc.web.MethodDescriptor(
-  '/ondewo.survey.FHIR/CreateFHIRSurvey',
-  grpc.web.MethodType.UNARY,
-  proto.ondewo.survey.CreateFHIRSurveyRequest,
-  ondewo_survey_survey_pb.Survey,
-  /**
-   * @param {!proto.ondewo.survey.CreateFHIRSurveyRequest} request
-   * @return {!Uint8Array}
-   */
-  function(request) {
-    return request.serializeBinary();
-  },
-  ondewo_survey_survey_pb.Survey.deserializeBinary
+	'/ondewo.survey.FHIR/CreateFHIRSurvey',
+	grpc.web.MethodType.UNARY,
+	proto.ondewo.survey.CreateFHIRSurveyRequest,
+	ondewo_survey_survey_pb.Survey,
+	/**
+	 * @param {!proto.ondewo.survey.CreateFHIRSurveyRequest} request
+	 * @return {!Uint8Array}
+	 */
+	function (request) {
+		return request.serializeBinary();
+	},
+	ondewo_survey_survey_pb.Survey.deserializeBinary
 );
-
 
 /**
  * @param {!proto.ondewo.survey.CreateFHIRSurveyRequest} request The
@@ -109,16 +98,15 @@ const methodDescriptor_FHIR_CreateFHIRSurvey = new grpc.web.MethodDescriptor(
  * @return {!grpc.web.ClientReadableStream<!proto.ondewo.survey.Survey>|undefined}
  *     The XHR Node Readable Stream
  */
-proto.ondewo.survey.FHIRClient.prototype.createFHIRSurvey =
-    function(request, metadata, callback) {
-  return this.client_.rpcCall(this.hostname_ +
-      '/ondewo.survey.FHIR/CreateFHIRSurvey',
-      request,
-      metadata || {},
-      methodDescriptor_FHIR_CreateFHIRSurvey,
-      callback);
+proto.ondewo.survey.FHIRClient.prototype.createFHIRSurvey = function (request, metadata, callback) {
+	return this.client_.rpcCall(
+		this.hostname_ + '/ondewo.survey.FHIR/CreateFHIRSurvey',
+		request,
+		metadata || {},
+		methodDescriptor_FHIR_CreateFHIRSurvey,
+		callback
+	);
 };
-
 
 /**
  * @param {!proto.ondewo.survey.CreateFHIRSurveyRequest} request The
@@ -128,15 +116,14 @@ proto.ondewo.survey.FHIRClient.prototype.createFHIRSurvey =
  * @return {!Promise<!proto.ondewo.survey.Survey>}
  *     Promise that resolves to the response
  */
-proto.ondewo.survey.FHIRPromiseClient.prototype.createFHIRSurvey =
-    function(request, metadata) {
-  return this.client_.unaryCall(this.hostname_ +
-      '/ondewo.survey.FHIR/CreateFHIRSurvey',
-      request,
-      metadata || {},
-      methodDescriptor_FHIR_CreateFHIRSurvey);
+proto.ondewo.survey.FHIRPromiseClient.prototype.createFHIRSurvey = function (request, metadata) {
+	return this.client_.unaryCall(
+		this.hostname_ + '/ondewo.survey.FHIR/CreateFHIRSurvey',
+		request,
+		metadata || {},
+		methodDescriptor_FHIR_CreateFHIRSurvey
+	);
 };
-
 
 /**
  * @const
@@ -145,20 +132,19 @@ proto.ondewo.survey.FHIRPromiseClient.prototype.createFHIRSurvey =
  *   !proto.ondewo.survey.SurveyFHIRAnswersResponse>}
  */
 const methodDescriptor_FHIR_GetFHIRSurveyAnswers = new grpc.web.MethodDescriptor(
-  '/ondewo.survey.FHIR/GetFHIRSurveyAnswers',
-  grpc.web.MethodType.UNARY,
-  ondewo_survey_survey_pb.GetSurveyAnswersRequest,
-  proto.ondewo.survey.SurveyFHIRAnswersResponse,
-  /**
-   * @param {!proto.ondewo.survey.GetSurveyAnswersRequest} request
-   * @return {!Uint8Array}
-   */
-  function(request) {
-    return request.serializeBinary();
-  },
-  proto.ondewo.survey.SurveyFHIRAnswersResponse.deserializeBinary
+	'/ondewo.survey.FHIR/GetFHIRSurveyAnswers',
+	grpc.web.MethodType.UNARY,
+	ondewo_survey_survey_pb.GetSurveyAnswersRequest,
+	proto.ondewo.survey.SurveyFHIRAnswersResponse,
+	/**
+	 * @param {!proto.ondewo.survey.GetSurveyAnswersRequest} request
+	 * @return {!Uint8Array}
+	 */
+	function (request) {
+		return request.serializeBinary();
+	},
+	proto.ondewo.survey.SurveyFHIRAnswersResponse.deserializeBinary
 );
-
 
 /**
  * @param {!proto.ondewo.survey.GetSurveyAnswersRequest} request The
@@ -170,16 +156,15 @@ const methodDescriptor_FHIR_GetFHIRSurveyAnswers = new grpc.web.MethodDescriptor
  * @return {!grpc.web.ClientReadableStream<!proto.ondewo.survey.SurveyFHIRAnswersResponse>|undefined}
  *     The XHR Node Readable Stream
  */
-proto.ondewo.survey.FHIRClient.prototype.getFHIRSurveyAnswers =
-    function(request, metadata, callback) {
-  return this.client_.rpcCall(this.hostname_ +
-      '/ondewo.survey.FHIR/GetFHIRSurveyAnswers',
-      request,
-      metadata || {},
-      methodDescriptor_FHIR_GetFHIRSurveyAnswers,
-      callback);
+proto.ondewo.survey.FHIRClient.prototype.getFHIRSurveyAnswers = function (request, metadata, callback) {
+	return this.client_.rpcCall(
+		this.hostname_ + '/ondewo.survey.FHIR/GetFHIRSurveyAnswers',
+		request,
+		metadata || {},
+		methodDescriptor_FHIR_GetFHIRSurveyAnswers,
+		callback
+	);
 };
-
 
 /**
  * @param {!proto.ondewo.survey.GetSurveyAnswersRequest} request The
@@ -189,15 +174,14 @@ proto.ondewo.survey.FHIRClient.prototype.getFHIRSurveyAnswers =
  * @return {!Promise<!proto.ondewo.survey.SurveyFHIRAnswersResponse>}
  *     Promise that resolves to the response
  */
-proto.ondewo.survey.FHIRPromiseClient.prototype.getFHIRSurveyAnswers =
-    function(request, metadata) {
-  return this.client_.unaryCall(this.hostname_ +
-      '/ondewo.survey.FHIR/GetFHIRSurveyAnswers',
-      request,
-      metadata || {},
-      methodDescriptor_FHIR_GetFHIRSurveyAnswers);
+proto.ondewo.survey.FHIRPromiseClient.prototype.getFHIRSurveyAnswers = function (request, metadata) {
+	return this.client_.unaryCall(
+		this.hostname_ + '/ondewo.survey.FHIR/GetFHIRSurveyAnswers',
+		request,
+		metadata || {},
+		methodDescriptor_FHIR_GetFHIRSurveyAnswers
+	);
 };
-
 
 /**
  * @const
@@ -206,20 +190,19 @@ proto.ondewo.survey.FHIRPromiseClient.prototype.getFHIRSurveyAnswers =
  *   !proto.ondewo.survey.SurveyFHIRAnswersResponse>}
  */
 const methodDescriptor_FHIR_GetAllFHIRSurveyAnswers = new grpc.web.MethodDescriptor(
-  '/ondewo.survey.FHIR/GetAllFHIRSurveyAnswers',
-  grpc.web.MethodType.UNARY,
-  ondewo_survey_survey_pb.GetAllSurveyAnswersRequest,
-  proto.ondewo.survey.SurveyFHIRAnswersResponse,
-  /**
-   * @param {!proto.ondewo.survey.GetAllSurveyAnswersRequest} request
-   * @return {!Uint8Array}
-   */
-  function(request) {
-    return request.serializeBinary();
-  },
-  proto.ondewo.survey.SurveyFHIRAnswersResponse.deserializeBinary
+	'/ondewo.survey.FHIR/GetAllFHIRSurveyAnswers',
+	grpc.web.MethodType.UNARY,
+	ondewo_survey_survey_pb.GetAllSurveyAnswersRequest,
+	proto.ondewo.survey.SurveyFHIRAnswersResponse,
+	/**
+	 * @param {!proto.ondewo.survey.GetAllSurveyAnswersRequest} request
+	 * @return {!Uint8Array}
+	 */
+	function (request) {
+		return request.serializeBinary();
+	},
+	proto.ondewo.survey.SurveyFHIRAnswersResponse.deserializeBinary
 );
-
 
 /**
  * @param {!proto.ondewo.survey.GetAllSurveyAnswersRequest} request The
@@ -231,16 +214,15 @@ const methodDescriptor_FHIR_GetAllFHIRSurveyAnswers = new grpc.web.MethodDescrip
  * @return {!grpc.web.ClientReadableStream<!proto.ondewo.survey.SurveyFHIRAnswersResponse>|undefined}
  *     The XHR Node Readable Stream
  */
-proto.ondewo.survey.FHIRClient.prototype.getAllFHIRSurveyAnswers =
-    function(request, metadata, callback) {
-  return this.client_.rpcCall(this.hostname_ +
-      '/ondewo.survey.FHIR/GetAllFHIRSurveyAnswers',
-      request,
-      metadata || {},
-      methodDescriptor_FHIR_GetAllFHIRSurveyAnswers,
-      callback);
+proto.ondewo.survey.FHIRClient.prototype.getAllFHIRSurveyAnswers = function (request, metadata, callback) {
+	return this.client_.rpcCall(
+		this.hostname_ + '/ondewo.survey.FHIR/GetAllFHIRSurveyAnswers',
+		request,
+		metadata || {},
+		methodDescriptor_FHIR_GetAllFHIRSurveyAnswers,
+		callback
+	);
 };
-
 
 /**
  * @param {!proto.ondewo.survey.GetAllSurveyAnswersRequest} request The
@@ -250,15 +232,13 @@ proto.ondewo.survey.FHIRClient.prototype.getAllFHIRSurveyAnswers =
  * @return {!Promise<!proto.ondewo.survey.SurveyFHIRAnswersResponse>}
  *     Promise that resolves to the response
  */
-proto.ondewo.survey.FHIRPromiseClient.prototype.getAllFHIRSurveyAnswers =
-    function(request, metadata) {
-  return this.client_.unaryCall(this.hostname_ +
-      '/ondewo.survey.FHIR/GetAllFHIRSurveyAnswers',
-      request,
-      metadata || {},
-      methodDescriptor_FHIR_GetAllFHIRSurveyAnswers);
+proto.ondewo.survey.FHIRPromiseClient.prototype.getAllFHIRSurveyAnswers = function (request, metadata) {
+	return this.client_.unaryCall(
+		this.hostname_ + '/ondewo.survey.FHIR/GetAllFHIRSurveyAnswers',
+		request,
+		metadata || {},
+		methodDescriptor_FHIR_GetAllFHIRSurveyAnswers
+	);
 };
 
-
 module.exports = proto.ondewo.survey;
-
