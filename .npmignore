@@ -1,1 +1,5 @@
 src/ondewo-survey-api
+.test-build/
+coverage/
+.nyc_output/
+auth/*.spec.ts
