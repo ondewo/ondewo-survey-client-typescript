@@ -43,7 +43,7 @@ import type { SurveysPromiseClient } from '../api/ondewo/survey/survey_grpc_web_
  * @returns gRPC-web metadata carrying the `authorization` header.
  */
 export function authorizationMetadata(authorizationHeader: string): grpcWeb.Metadata {
-	return { authorization: authorizationHeader };
+	return { Authorization: authorizationHeader };
 }
 
 /**

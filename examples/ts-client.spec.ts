@@ -121,7 +121,7 @@ function fakeSurveysClient(response: ListSurveysResponse): FakeClientRecord {
 }
 
 runTestCase('authorizationMetadata carries the bearer credential on the authorization header', () => {
-	assert.deepEqual(authorizationMetadata('Bearer access-1'), { authorization: 'Bearer access-1' });
+	assert.deepEqual(authorizationMetadata('Bearer access-1'), { Authorization: 'Bearer access-1' });
 });
 
 runTestCase('applyPageSize writes the ONDEWO page_size-<n> pagination token onto the request', () => {
@@ -142,5 +142,5 @@ runTestCase('listSurveyDisplayNames sends the bearer metadata and maps surveys t
 	assert.deepEqual(displayNames, ['Onboarding', 'NPS']);
 	assert.equal(backend.calls.length, 1);
 	assert.equal(backend.calls[0].request, built.message);
-	assert.deepEqual(backend.calls[0].metadata, { authorization: 'Bearer access-1' });
+	assert.deepEqual(backend.calls[0].metadata, { Authorization: 'Bearer access-1' });
 });
