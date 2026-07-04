@@ -18,6 +18,7 @@ export default [
 	{
 		ignores: [
 			'**/api/',
+			'**/.test-build/',
 			'src/ondewo-survey-api',
 			'**/ondewo-proto-compiler',
 			'**/*.mjs',

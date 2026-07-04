@@ -17,7 +17,7 @@ export
 ONDEWO_SURVEY_VERSION = 2.0.0
 
 SURVEY_API_GIT_BRANCH=tags/2.0.0
-ONDEWO_PROTO_COMPILER_GIT_BRANCH=tags/5.0.0
+ONDEWO_PROTO_COMPILER_GIT_BRANCH=tags/5.9.0
 ONDEWO_PROTO_COMPILER_DIR=ondewo-proto-compiler
 SURVEY_APIS_DIR=src/ondewo-survey-api
 SURVEY_PROTOS_DIR=${SURVEY_APIS_DIR}/ondewo
@@ -225,6 +225,8 @@ create_npm_package: ## Create NPM Package for Release
 	cp package.json npm
 	cp LICENSE npm
 	cp README.md npm
+	mkdir -p npm/auth
+	npx tsc auth/offlineTokenProvider.ts --ignoreConfig --declaration --module commonjs --target es2020 --strict --lib es2020,dom --skipLibCheck --types node --typeRoots ./node_modules/@types --outDir npm/auth
 
 install_dependencies: ## Installs Dev-Dependencies
 	npm i --save-dev \

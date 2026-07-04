@@ -21,8 +21,8 @@
  * so they can be unit-tested with in-memory fakes and NO live backend -- see `ts-client.spec.ts`.
  *
  * Auth follows the D18 Keycloak migration: every call carries an `Authorization: Bearer <token>`
- * metadata header sourced from the offline-token provider in `../auth/offlineTokenProvider`. There
- * is no legacy cai-token / HTTP-basic / users.login() credential anymore.
+ * metadata header sourced from the offline-token provider in `../auth/offlineTokenProvider` -- the
+ * only supported Survey auth scheme.
  *
  * The generated stubs are imported type-only, so importing this module never pulls the browser
  * gRPC-web runtime into a Node test process.

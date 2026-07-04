@@ -8,6 +8,6 @@
 		"outDir": "./dist",
 		"types": ["node"]
 	},
-	"include": ["examples/**/*.ts", "*.ts", "*.js"],
+	"include": ["auth/**/*.ts", "examples/**/*.ts", "*.ts", "*.js"],
 	"exclude": ["node_modules", "api"]
 }
