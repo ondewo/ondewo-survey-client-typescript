@@ -13,3 +13,6 @@ ondewo-survey-api/*
 
 .isort.cfg
 grpc_cert
+.test-build/
+coverage/
+.nyc_output/
