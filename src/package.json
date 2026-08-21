@@ -1,6 +1,6 @@
 {
   "name": "@ondewo/survey-client-typescript",
-  "version": "2.0.0",
+  "version": "2.0.1",
   "description": "ONDEWO Survey (SURVEY) Client library for Typescript",
   "author": "ONDEWO GmbH <office@ondewo.com>",
   "homepage": "https://ondewo.com",
