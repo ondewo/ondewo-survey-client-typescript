@@ -13,13 +13,7 @@
 
 var jspb = require('google-protobuf');
 var goog = jspb;
-var global =
-    (typeof globalThis !== 'undefined' && globalThis) ||
-    (typeof window !== 'undefined' && window) ||
-    (typeof global !== 'undefined' && global) ||
-    (typeof self !== 'undefined' && self) ||
-    (function () { return this; }).call(null) ||
-    Function('return this')();
+var global = globalThis;
 
 var google_api_annotations_pb = require('../../google/api/annotations_pb.js');
 goog.object.extend(proto, google_api_annotations_pb);
@@ -116,7 +110,7 @@ fhirQuestionnaire: (f = msg.getFhirQuestionnaire()) && google_protobuf_struct_pb
 
 /**
  * Deserializes binary data (in protobuf wire format).
- * @param {jspb.ByteSource} bytes The bytes to deserialize.
+ * @param {jspb.binary.bytesource.ByteSource} bytes The bytes to deserialize.
  * @return {!proto.ondewo.survey.CreateFHIRSurveyRequest}
  */
 proto.ondewo.survey.CreateFHIRSurveyRequest.deserializeBinary = function(bytes) {
@@ -276,7 +270,7 @@ fhirQuestionnaireResponsesList: jspb.Message.toObjectList(msg.getFhirQuestionnai
 
 /**
  * Deserializes binary data (in protobuf wire format).
- * @param {jspb.ByteSource} bytes The bytes to deserialize.
+ * @param {jspb.binary.bytesource.ByteSource} bytes The bytes to deserialize.
  * @return {!proto.ondewo.survey.SurveyFHIRAnswersResponse}
  */
 proto.ondewo.survey.SurveyFHIRAnswersResponse.deserializeBinary = function(bytes) {
@@ -301,7 +295,7 @@ proto.ondewo.survey.SurveyFHIRAnswersResponse.deserializeBinaryFromReader = func
     var field = reader.getFieldNumber();
     switch (field) {
     case 1:
-      var value = /** @type {string} */ (reader.readString());
+      var value = /** @type {string} */ (reader.readStringRequireUtf8());
       msg.setSurveyId(value);
       break;
     case 2:

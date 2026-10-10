@@ -13,13 +13,7 @@
 
 var jspb = require('google-protobuf');
 var goog = jspb;
-var global =
-    (typeof globalThis !== 'undefined' && globalThis) ||
-    (typeof window !== 'undefined' && window) ||
-    (typeof global !== 'undefined' && global) ||
-    (typeof self !== 'undefined' && self) ||
-    (function () { return this; }).call(null) ||
-    Function('return this')();
+var global = globalThis;
 
 var google_api_annotations_pb = require('../../google/api/annotations_pb.js');
 goog.object.extend(proto, google_api_annotations_pb);
@@ -619,7 +613,7 @@ status: jspb.Message.getFieldWithDefault(msg, 10, 0)
 
 /**
  * Deserializes binary data (in protobuf wire format).
- * @param {jspb.ByteSource} bytes The bytes to deserialize.
+ * @param {jspb.binary.bytesource.ByteSource} bytes The bytes to deserialize.
  * @return {!proto.ondewo.survey.Survey}
  */
 proto.ondewo.survey.Survey.deserializeBinary = function(bytes) {
@@ -644,15 +638,15 @@ proto.ondewo.survey.Survey.deserializeBinaryFromReader = function(msg, reader) {
     var field = reader.getFieldNumber();
     switch (field) {
     case 1:
-      var value = /** @type {string} */ (reader.readString());
+      var value = /** @type {string} */ (reader.readStringRequireUtf8());
       msg.setSurveyId(value);
       break;
     case 2:
-      var value = /** @type {string} */ (reader.readString());
+      var value = /** @type {string} */ (reader.readStringRequireUtf8());
       msg.setDisplayName(value);
       break;
     case 3:
-      var value = /** @type {string} */ (reader.readString());
+      var value = /** @type {string} */ (reader.readStringRequireUtf8());
       msg.setLanguageCode(value);
       break;
     case 7:
@@ -666,10 +660,7 @@ proto.ondewo.survey.Survey.deserializeBinaryFromReader = function(msg, reader) {
       msg.setSurveyInfo(value);
       break;
     case 9:
-      var values = /** @type {!Array<!proto.ondewo.survey.SubFlow>} */ (reader.isDelimited() ? reader.readPackedEnum() : [reader.readEnum()]);
-      for (var i = 0; i < values.length; i++) {
-        msg.addExcludeSubflows(values[i]);
-      }
+      reader.readPackableEnumInto(msg.getExcludeSubflowsList());
       break;
     case 10:
       var value = /** @type {!proto.ondewo.survey.Survey.AgentStatus} */ (reader.readEnum());
@@ -1006,7 +997,7 @@ anonymous: jspb.Message.getBooleanFieldWithDefault(msg, 10, false)
 
 /**
  * Deserializes binary data (in protobuf wire format).
- * @param {jspb.ByteSource} bytes The bytes to deserialize.
+ * @param {jspb.binary.bytesource.ByteSource} bytes The bytes to deserialize.
  * @return {!proto.ondewo.survey.SurveyInfo}
  */
 proto.ondewo.survey.SurveyInfo.deserializeBinary = function(bytes) {
@@ -1031,39 +1022,39 @@ proto.ondewo.survey.SurveyInfo.deserializeBinaryFromReader = function(msg, reade
     var field = reader.getFieldNumber();
     switch (field) {
     case 1:
-      var value = /** @type {string} */ (reader.readString());
+      var value = /** @type {string} */ (reader.readStringRequireUtf8());
       msg.setLegalEntity(value);
       break;
     case 2:
-      var value = /** @type {string} */ (reader.readString());
+      var value = /** @type {string} */ (reader.readStringRequireUtf8());
       msg.setPostalAddress(value);
       break;
     case 3:
-      var value = /** @type {string} */ (reader.readString());
+      var value = /** @type {string} */ (reader.readStringRequireUtf8());
       msg.setEmailAddress(value);
       break;
     case 4:
-      var value = /** @type {string} */ (reader.readString());
+      var value = /** @type {string} */ (reader.readStringRequireUtf8());
       msg.setPhoneNumber(value);
       break;
     case 5:
-      var value = /** @type {string} */ (reader.readString());
+      var value = /** @type {string} */ (reader.readStringRequireUtf8());
       msg.setPhoneHours(value);
       break;
     case 6:
-      var value = /** @type {string} */ (reader.readString());
+      var value = /** @type {string} */ (reader.readStringRequireUtf8());
       msg.setExpectedDuration(value);
       break;
     case 7:
-      var value = /** @type {string} */ (reader.readString());
+      var value = /** @type {string} */ (reader.readStringRequireUtf8());
       msg.setPurpose(value);
       break;
     case 8:
-      var value = /** @type {string} */ (reader.readString());
+      var value = /** @type {string} */ (reader.readStringRequireUtf8());
       msg.setTopic(value);
       break;
     case 9:
-      var value = /** @type {string} */ (reader.readString());
+      var value = /** @type {string} */ (reader.readStringRequireUtf8());
       msg.setLegalDisclaimer(value);
       break;
     case 10:
@@ -1432,7 +1423,7 @@ multipleParameterQuestion: (f = msg.getMultipleParameterQuestion()) && proto.ond
 
 /**
  * Deserializes binary data (in protobuf wire format).
- * @param {jspb.ByteSource} bytes The bytes to deserialize.
+ * @param {jspb.binary.bytesource.ByteSource} bytes The bytes to deserialize.
  * @return {!proto.ondewo.survey.Question}
  */
 proto.ondewo.survey.Question.deserializeBinary = function(bytes) {
@@ -1833,7 +1824,7 @@ questionText: jspb.Message.getFieldWithDefault(msg, 1, "")
 
 /**
  * Deserializes binary data (in protobuf wire format).
- * @param {jspb.ByteSource} bytes The bytes to deserialize.
+ * @param {jspb.binary.bytesource.ByteSource} bytes The bytes to deserialize.
  * @return {!proto.ondewo.survey.OpenQuestion}
  */
 proto.ondewo.survey.OpenQuestion.deserializeBinary = function(bytes) {
@@ -1858,7 +1849,7 @@ proto.ondewo.survey.OpenQuestion.deserializeBinaryFromReader = function(msg, rea
     var field = reader.getFieldNumber();
     switch (field) {
     case 1:
-      var value = /** @type {string} */ (reader.readString());
+      var value = /** @type {string} */ (reader.readStringRequireUtf8());
       msg.setQuestionText(value);
       break;
     default:
@@ -1972,7 +1963,7 @@ choicesList: jspb.Message.toObjectList(msg.getChoicesList(),
 
 /**
  * Deserializes binary data (in protobuf wire format).
- * @param {jspb.ByteSource} bytes The bytes to deserialize.
+ * @param {jspb.binary.bytesource.ByteSource} bytes The bytes to deserialize.
  * @return {!proto.ondewo.survey.SingleChoiceQuestion}
  */
 proto.ondewo.survey.SingleChoiceQuestion.deserializeBinary = function(bytes) {
@@ -1997,7 +1988,7 @@ proto.ondewo.survey.SingleChoiceQuestion.deserializeBinaryFromReader = function(
     var field = reader.getFieldNumber();
     switch (field) {
     case 1:
-      var value = /** @type {string} */ (reader.readString());
+      var value = /** @type {string} */ (reader.readStringRequireUtf8());
       msg.setQuestionText(value);
       break;
     case 2:
@@ -2162,7 +2153,7 @@ choicesList: jspb.Message.toObjectList(msg.getChoicesList(),
 
 /**
  * Deserializes binary data (in protobuf wire format).
- * @param {jspb.ByteSource} bytes The bytes to deserialize.
+ * @param {jspb.binary.bytesource.ByteSource} bytes The bytes to deserialize.
  * @return {!proto.ondewo.survey.MultipleChoiceQuestion}
  */
 proto.ondewo.survey.MultipleChoiceQuestion.deserializeBinary = function(bytes) {
@@ -2187,7 +2178,7 @@ proto.ondewo.survey.MultipleChoiceQuestion.deserializeBinaryFromReader = functio
     var field = reader.getFieldNumber();
     switch (field) {
     case 1:
-      var value = /** @type {string} */ (reader.readString());
+      var value = /** @type {string} */ (reader.readStringRequireUtf8());
       msg.setQuestionText(value);
       break;
     case 2:
@@ -2345,7 +2336,7 @@ maxValue: (f = msg.getMaxValue()) && proto.ondewo.survey.ScaleQuestion.ScaleValu
 
 /**
  * Deserializes binary data (in protobuf wire format).
- * @param {jspb.ByteSource} bytes The bytes to deserialize.
+ * @param {jspb.binary.bytesource.ByteSource} bytes The bytes to deserialize.
  * @return {!proto.ondewo.survey.ScaleQuestion}
  */
 proto.ondewo.survey.ScaleQuestion.deserializeBinary = function(bytes) {
@@ -2370,7 +2361,7 @@ proto.ondewo.survey.ScaleQuestion.deserializeBinaryFromReader = function(msg, re
     var field = reader.getFieldNumber();
     switch (field) {
     case 1:
-      var value = /** @type {string} */ (reader.readString());
+      var value = /** @type {string} */ (reader.readStringRequireUtf8());
       msg.setQuestionText(value);
       break;
     case 2:
@@ -2484,7 +2475,7 @@ label: jspb.Message.getFieldWithDefault(msg, 2, "")
 
 /**
  * Deserializes binary data (in protobuf wire format).
- * @param {jspb.ByteSource} bytes The bytes to deserialize.
+ * @param {jspb.binary.bytesource.ByteSource} bytes The bytes to deserialize.
  * @return {!proto.ondewo.survey.ScaleQuestion.ScaleValue}
  */
 proto.ondewo.survey.ScaleQuestion.ScaleValue.deserializeBinary = function(bytes) {
@@ -2513,7 +2504,7 @@ proto.ondewo.survey.ScaleQuestion.ScaleValue.deserializeBinaryFromReader = funct
       msg.setValue(value);
       break;
     case 2:
-      var value = /** @type {string} */ (reader.readString());
+      var value = /** @type {string} */ (reader.readStringRequireUtf8());
       msg.setLabel(value);
       break;
     default:
@@ -2736,7 +2727,7 @@ parameterType: jspb.Message.getFieldWithDefault(msg, 2, "")
 
 /**
  * Deserializes binary data (in protobuf wire format).
- * @param {jspb.ByteSource} bytes The bytes to deserialize.
+ * @param {jspb.binary.bytesource.ByteSource} bytes The bytes to deserialize.
  * @return {!proto.ondewo.survey.SingleParameterQuestion}
  */
 proto.ondewo.survey.SingleParameterQuestion.deserializeBinary = function(bytes) {
@@ -2761,11 +2752,11 @@ proto.ondewo.survey.SingleParameterQuestion.deserializeBinaryFromReader = functi
     var field = reader.getFieldNumber();
     switch (field) {
     case 1:
-      var value = /** @type {string} */ (reader.readString());
+      var value = /** @type {string} */ (reader.readStringRequireUtf8());
       msg.setQuestionText(value);
       break;
     case 2:
-      var value = /** @type {string} */ (reader.readString());
+      var value = /** @type {string} */ (reader.readStringRequireUtf8());
       msg.setParameterType(value);
       break;
     default:
@@ -2896,7 +2887,7 @@ parameterType: jspb.Message.getFieldWithDefault(msg, 2, "")
 
 /**
  * Deserializes binary data (in protobuf wire format).
- * @param {jspb.ByteSource} bytes The bytes to deserialize.
+ * @param {jspb.binary.bytesource.ByteSource} bytes The bytes to deserialize.
  * @return {!proto.ondewo.survey.MultipleParameterQuestion}
  */
 proto.ondewo.survey.MultipleParameterQuestion.deserializeBinary = function(bytes) {
@@ -2921,11 +2912,11 @@ proto.ondewo.survey.MultipleParameterQuestion.deserializeBinaryFromReader = func
     var field = reader.getFieldNumber();
     switch (field) {
     case 1:
-      var value = /** @type {string} */ (reader.readString());
+      var value = /** @type {string} */ (reader.readStringRequireUtf8());
       msg.setQuestionText(value);
       break;
     case 2:
-      var value = /** @type {string} */ (reader.readString());
+      var value = /** @type {string} */ (reader.readStringRequireUtf8());
       msg.setParameterType(value);
       break;
     default:
@@ -3064,7 +3055,7 @@ value: jspb.Message.getFieldWithDefault(msg, 3, "")
 
 /**
  * Deserializes binary data (in protobuf wire format).
- * @param {jspb.ByteSource} bytes The bytes to deserialize.
+ * @param {jspb.binary.bytesource.ByteSource} bytes The bytes to deserialize.
  * @return {!proto.ondewo.survey.Choice}
  */
 proto.ondewo.survey.Choice.deserializeBinary = function(bytes) {
@@ -3089,7 +3080,7 @@ proto.ondewo.survey.Choice.deserializeBinaryFromReader = function(msg, reader) {
     var field = reader.getFieldNumber();
     switch (field) {
     case 1:
-      var value = /** @type {string} */ (reader.readString());
+      var value = /** @type {string} */ (reader.readStringRequireUtf8());
       msg.addSynonyms(value);
       break;
     case 2:
@@ -3098,7 +3089,7 @@ proto.ondewo.survey.Choice.deserializeBinaryFromReader = function(msg, reader) {
       msg.setFollowUpQuestion(value);
       break;
     case 3:
-      var value = /** @type {string} */ (reader.readString());
+      var value = /** @type {string} */ (reader.readStringRequireUtf8());
       msg.setValue(value);
       break;
     default:
@@ -3324,7 +3315,7 @@ userInformation: (f = msg.getUserInformation()) && proto.ondewo.survey.Answer.Us
 
 /**
  * Deserializes binary data (in protobuf wire format).
- * @param {jspb.ByteSource} bytes The bytes to deserialize.
+ * @param {jspb.binary.bytesource.ByteSource} bytes The bytes to deserialize.
  * @return {!proto.ondewo.survey.Answer}
  */
 proto.ondewo.survey.Answer.deserializeBinary = function(bytes) {
@@ -3353,19 +3344,19 @@ proto.ondewo.survey.Answer.deserializeBinaryFromReader = function(msg, reader) {
       msg.setQuestionNr(value);
       break;
     case 2:
-      var value = /** @type {string} */ (reader.readString());
+      var value = /** @type {string} */ (reader.readStringRequireUtf8());
       msg.setSessionId(value);
       break;
     case 3:
-      var value = /** @type {string} */ (reader.readString());
+      var value = /** @type {string} */ (reader.readStringRequireUtf8());
       msg.setAnswerText(value);
       break;
     case 4:
-      var value = /** @type {string} */ (reader.readString());
+      var value = /** @type {string} */ (reader.readStringRequireUtf8());
       msg.setAnswerParameter(value);
       break;
     case 5:
-      var value = /** @type {string} */ (reader.readString());
+      var value = /** @type {string} */ (reader.readStringRequireUtf8());
       msg.setAnswerParameterOriginal(value);
       break;
     case 7:
@@ -3508,7 +3499,7 @@ userId: jspb.Message.getFieldWithDefault(msg, 5, "")
 
 /**
  * Deserializes binary data (in protobuf wire format).
- * @param {jspb.ByteSource} bytes The bytes to deserialize.
+ * @param {jspb.binary.bytesource.ByteSource} bytes The bytes to deserialize.
  * @return {!proto.ondewo.survey.Answer.UserInfo}
  */
 proto.ondewo.survey.Answer.UserInfo.deserializeBinary = function(bytes) {
@@ -3533,23 +3524,23 @@ proto.ondewo.survey.Answer.UserInfo.deserializeBinaryFromReader = function(msg, 
     var field = reader.getFieldNumber();
     switch (field) {
     case 1:
-      var value = /** @type {string} */ (reader.readString());
+      var value = /** @type {string} */ (reader.readStringRequireUtf8());
       msg.setFirstName(value);
       break;
     case 2:
-      var value = /** @type {string} */ (reader.readString());
+      var value = /** @type {string} */ (reader.readStringRequireUtf8());
       msg.setLastName(value);
       break;
     case 3:
-      var value = /** @type {string} */ (reader.readString());
+      var value = /** @type {string} */ (reader.readStringRequireUtf8());
       msg.setPhoneNumber(value);
       break;
     case 4:
-      var value = /** @type {string} */ (reader.readString());
+      var value = /** @type {string} */ (reader.readStringRequireUtf8());
       msg.setSessionId(value);
       break;
     case 5:
-      var value = /** @type {string} */ (reader.readString());
+      var value = /** @type {string} */ (reader.readStringRequireUtf8());
       msg.setUserId(value);
       break;
     default:
@@ -3917,7 +3908,7 @@ survey: (f = msg.getSurvey()) && proto.ondewo.survey.Survey.toObject(includeInst
 
 /**
  * Deserializes binary data (in protobuf wire format).
- * @param {jspb.ByteSource} bytes The bytes to deserialize.
+ * @param {jspb.binary.bytesource.ByteSource} bytes The bytes to deserialize.
  * @return {!proto.ondewo.survey.CreateSurveyRequest}
  */
 proto.ondewo.survey.CreateSurveyRequest.deserializeBinary = function(bytes) {
@@ -4068,7 +4059,7 @@ surveyId: jspb.Message.getFieldWithDefault(msg, 1, "")
 
 /**
  * Deserializes binary data (in protobuf wire format).
- * @param {jspb.ByteSource} bytes The bytes to deserialize.
+ * @param {jspb.binary.bytesource.ByteSource} bytes The bytes to deserialize.
  * @return {!proto.ondewo.survey.GetSurveyRequest}
  */
 proto.ondewo.survey.GetSurveyRequest.deserializeBinary = function(bytes) {
@@ -4093,7 +4084,7 @@ proto.ondewo.survey.GetSurveyRequest.deserializeBinaryFromReader = function(msg,
     var field = reader.getFieldNumber();
     switch (field) {
     case 1:
-      var value = /** @type {string} */ (reader.readString());
+      var value = /** @type {string} */ (reader.readStringRequireUtf8());
       msg.setSurveyId(value);
       break;
     default:
@@ -4199,7 +4190,7 @@ updateMask: (f = msg.getUpdateMask()) && google_protobuf_field_mask_pb.FieldMask
 
 /**
  * Deserializes binary data (in protobuf wire format).
- * @param {jspb.ByteSource} bytes The bytes to deserialize.
+ * @param {jspb.binary.bytesource.ByteSource} bytes The bytes to deserialize.
  * @return {!proto.ondewo.survey.UpdateSurveyRequest}
  */
 proto.ondewo.survey.UpdateSurveyRequest.deserializeBinary = function(bytes) {
@@ -4400,7 +4391,7 @@ surveyId: jspb.Message.getFieldWithDefault(msg, 1, "")
 
 /**
  * Deserializes binary data (in protobuf wire format).
- * @param {jspb.ByteSource} bytes The bytes to deserialize.
+ * @param {jspb.binary.bytesource.ByteSource} bytes The bytes to deserialize.
  * @return {!proto.ondewo.survey.DeleteSurveyRequest}
  */
 proto.ondewo.survey.DeleteSurveyRequest.deserializeBinary = function(bytes) {
@@ -4425,7 +4416,7 @@ proto.ondewo.survey.DeleteSurveyRequest.deserializeBinaryFromReader = function(m
     var field = reader.getFieldNumber();
     switch (field) {
     case 1:
-      var value = /** @type {string} */ (reader.readString());
+      var value = /** @type {string} */ (reader.readStringRequireUtf8());
       msg.setSurveyId(value);
       break;
     default:
@@ -4560,7 +4551,7 @@ userPhoneNumber: (f = jspb.Message.getField(msg, 4)) == null ? undefined : f
 
 /**
  * Deserializes binary data (in protobuf wire format).
- * @param {jspb.ByteSource} bytes The bytes to deserialize.
+ * @param {jspb.binary.bytesource.ByteSource} bytes The bytes to deserialize.
  * @return {!proto.ondewo.survey.GetSurveyAnswersRequest}
  */
 proto.ondewo.survey.GetSurveyAnswersRequest.deserializeBinary = function(bytes) {
@@ -4585,19 +4576,19 @@ proto.ondewo.survey.GetSurveyAnswersRequest.deserializeBinaryFromReader = functi
     var field = reader.getFieldNumber();
     switch (field) {
     case 1:
-      var value = /** @type {string} */ (reader.readString());
+      var value = /** @type {string} */ (reader.readStringRequireUtf8());
       msg.setSurveyId(value);
       break;
     case 2:
-      var value = /** @type {string} */ (reader.readString());
+      var value = /** @type {string} */ (reader.readStringRequireUtf8());
       msg.setSessionId(value);
       break;
     case 3:
-      var value = /** @type {string} */ (reader.readString());
+      var value = /** @type {string} */ (reader.readStringRequireUtf8());
       msg.setUserId(value);
       break;
     case 4:
-      var value = /** @type {string} */ (reader.readString());
+      var value = /** @type {string} */ (reader.readStringRequireUtf8());
       msg.setUserPhoneNumber(value);
       break;
     default:
@@ -4831,7 +4822,7 @@ surveyId: jspb.Message.getFieldWithDefault(msg, 1, "")
 
 /**
  * Deserializes binary data (in protobuf wire format).
- * @param {jspb.ByteSource} bytes The bytes to deserialize.
+ * @param {jspb.binary.bytesource.ByteSource} bytes The bytes to deserialize.
  * @return {!proto.ondewo.survey.GetAllSurveyAnswersRequest}
  */
 proto.ondewo.survey.GetAllSurveyAnswersRequest.deserializeBinary = function(bytes) {
@@ -4856,7 +4847,7 @@ proto.ondewo.survey.GetAllSurveyAnswersRequest.deserializeBinaryFromReader = fun
     var field = reader.getFieldNumber();
     switch (field) {
     case 1:
-      var value = /** @type {string} */ (reader.readString());
+      var value = /** @type {string} */ (reader.readStringRequireUtf8());
       msg.setSurveyId(value);
       break;
     default:
@@ -4970,7 +4961,7 @@ answersList: jspb.Message.toObjectList(msg.getAnswersList(),
 
 /**
  * Deserializes binary data (in protobuf wire format).
- * @param {jspb.ByteSource} bytes The bytes to deserialize.
+ * @param {jspb.binary.bytesource.ByteSource} bytes The bytes to deserialize.
  * @return {!proto.ondewo.survey.SurveyAnswersResponse}
  */
 proto.ondewo.survey.SurveyAnswersResponse.deserializeBinary = function(bytes) {
@@ -4995,7 +4986,7 @@ proto.ondewo.survey.SurveyAnswersResponse.deserializeBinaryFromReader = function
     var field = reader.getFieldNumber();
     switch (field) {
     case 1:
-      var value = /** @type {string} */ (reader.readString());
+      var value = /** @type {string} */ (reader.readStringRequireUtf8());
       msg.setSurveyId(value);
       break;
     case 2:
@@ -5151,7 +5142,7 @@ pageToken: jspb.Message.getFieldWithDefault(msg, 1, "")
 
 /**
  * Deserializes binary data (in protobuf wire format).
- * @param {jspb.ByteSource} bytes The bytes to deserialize.
+ * @param {jspb.binary.bytesource.ByteSource} bytes The bytes to deserialize.
  * @return {!proto.ondewo.survey.ListSurveysRequest}
  */
 proto.ondewo.survey.ListSurveysRequest.deserializeBinary = function(bytes) {
@@ -5176,7 +5167,7 @@ proto.ondewo.survey.ListSurveysRequest.deserializeBinaryFromReader = function(ms
     var field = reader.getFieldNumber();
     switch (field) {
     case 1:
-      var value = /** @type {string} */ (reader.readString());
+      var value = /** @type {string} */ (reader.readStringRequireUtf8());
       msg.setPageToken(value);
       break;
     default:
@@ -5290,7 +5281,7 @@ nextPageToken: jspb.Message.getFieldWithDefault(msg, 2, "")
 
 /**
  * Deserializes binary data (in protobuf wire format).
- * @param {jspb.ByteSource} bytes The bytes to deserialize.
+ * @param {jspb.binary.bytesource.ByteSource} bytes The bytes to deserialize.
  * @return {!proto.ondewo.survey.ListSurveysResponse}
  */
 proto.ondewo.survey.ListSurveysResponse.deserializeBinary = function(bytes) {
@@ -5320,7 +5311,7 @@ proto.ondewo.survey.ListSurveysResponse.deserializeBinaryFromReader = function(m
       msg.addSurveys(value);
       break;
     case 2:
-      var value = /** @type {string} */ (reader.readString());
+      var value = /** @type {string} */ (reader.readStringRequireUtf8());
       msg.setNextPageToken(value);
       break;
     default:
@@ -5471,7 +5462,7 @@ surveyId: jspb.Message.getFieldWithDefault(msg, 1, "")
 
 /**
  * Deserializes binary data (in protobuf wire format).
- * @param {jspb.ByteSource} bytes The bytes to deserialize.
+ * @param {jspb.binary.bytesource.ByteSource} bytes The bytes to deserialize.
  * @return {!proto.ondewo.survey.AgentSurveyRequest}
  */
 proto.ondewo.survey.AgentSurveyRequest.deserializeBinary = function(bytes) {
@@ -5496,7 +5487,7 @@ proto.ondewo.survey.AgentSurveyRequest.deserializeBinaryFromReader = function(ms
     var field = reader.getFieldNumber();
     switch (field) {
     case 1:
-      var value = /** @type {string} */ (reader.readString());
+      var value = /** @type {string} */ (reader.readStringRequireUtf8());
       msg.setSurveyId(value);
       break;
     default:
@@ -5601,7 +5592,7 @@ parent: jspb.Message.getFieldWithDefault(msg, 1, "")
 
 /**
  * Deserializes binary data (in protobuf wire format).
- * @param {jspb.ByteSource} bytes The bytes to deserialize.
+ * @param {jspb.binary.bytesource.ByteSource} bytes The bytes to deserialize.
  * @return {!proto.ondewo.survey.AgentSurveyResponse}
  */
 proto.ondewo.survey.AgentSurveyResponse.deserializeBinary = function(bytes) {
@@ -5626,7 +5617,7 @@ proto.ondewo.survey.AgentSurveyResponse.deserializeBinaryFromReader = function(m
     var field = reader.getFieldNumber();
     switch (field) {
     case 1:
-      var value = /** @type {string} */ (reader.readString());
+      var value = /** @type {string} */ (reader.readStringRequireUtf8());
       msg.setParent(value);
       break;
     default:
