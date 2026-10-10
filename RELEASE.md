@@ -2,6 +2,22 @@
 
 *****************
 
+## Release ONDEWO Survey Typescript Client 2.0.3
+
+### Bug Fixes
+
+* [[OND211-2443]](https://ondewo.atlassian.net/browse/OND211-2443) 2.0.2 shipped `api/google/api/annotations_pb.js`,
+  which requires `../../google/api/http_pb.js`, without that file: loading any generated client module that reaches
+  `annotations_pb` (every `ondewo/survey/*_pb.js` / `*_grpc_web_pb.js` with an HTTP annotation) failed with
+  `Cannot find module '../../google/api/http_pb.js'`. The proto compiler generated only the google protos the API
+  imports directly; 5.15.6 follows their own imports too. Regenerated with ondewo-proto-compiler 5.15.6, so
+  `api/google/api/http_pb.js` and `http_pb.d.ts` are shipped. Do not use 2.0.2. The ondewo-survey-api commit is
+  unchanged (`37d2f92`, now pinned by commit instead of by branch name).
+* A new test (`tests/generatedModules.spec.ts`) requires every generated module and resolves every relative import in
+  `api/` and in the entry point, so a missing stub fails CI.
+
+*****************
+
 ## Release ONDEWO Survey Typescript Client 2.0.2
 
 ### New Features
