@@ -15,7 +15,7 @@ export
 ########################################################
 
 ONDEWO_SURVEY_VERSION=2.0.3
-SURVEY_API_GIT_BRANCH=37d2f92cbd9fdbf51348d31db6e49cd1fae6c76b
+SURVEY_API_GIT_BRANCH=tags/2.0.1
 ONDEWO_PROTO_COMPILER_GIT_BRANCH=tags/5.15.6
 ONDEWO_PROTO_COMPILER_DIR=ondewo-proto-compiler
 SURVEY_APIS_DIR=src/ondewo-survey-api
