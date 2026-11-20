@@ -6,6 +6,8 @@ import * as google_protobuf_field_mask_pb from 'google-protobuf/google/protobuf/
 
 
 export class Survey extends jspb.Message {
+  constructor();
+  constructor(opt_data?: Survey.AsObject);
   getSurveyId(): string;
   setSurveyId(value: string): Survey;
 
@@ -43,16 +45,16 @@ export class Survey extends jspb.Message {
 
 export namespace Survey {
   export type AsObject = {
-    surveyId: string,
-    displayName: string,
-    languageCode: string,
-    questionsList: Array<Question.AsObject>,
-    surveyInfo?: SurveyInfo.AsObject,
-    excludeSubflowsList: Array<SubFlow>,
-    status: Survey.AgentStatus,
-  }
+    surveyId: string;
+    displayName: string;
+    languageCode: string;
+    questionsList: Array<Question.AsObject>;
+    surveyInfo?: SurveyInfo.AsObject;
+    excludeSubflowsList: Array<SubFlow>;
+    status: Survey.AgentStatus;
+  };
 
-  export enum AgentStatus { 
+  export enum AgentStatus {
     TO_BE_INITIALIZED = 0,
     UPDATED = 1,
     UPDATING = 2,
@@ -61,6 +63,8 @@ export namespace Survey {
 }
 
 export class SurveyInfo extends jspb.Message {
+  constructor();
+  constructor(opt_data?: SurveyInfo.AsObject);
   getLegalEntity(): string;
   setLegalEntity(value: string): SurveyInfo;
 
@@ -101,20 +105,22 @@ export class SurveyInfo extends jspb.Message {
 
 export namespace SurveyInfo {
   export type AsObject = {
-    legalEntity: string,
-    postalAddress: string,
-    emailAddress: string,
-    phoneNumber: string,
-    phoneHours: string,
-    expectedDuration: string,
-    purpose: string,
-    topic: string,
-    legalDisclaimer: string,
-    anonymous: boolean,
-  }
+    legalEntity: string;
+    postalAddress: string;
+    emailAddress: string;
+    phoneNumber: string;
+    phoneHours: string;
+    expectedDuration: string;
+    purpose: string;
+    topic: string;
+    legalDisclaimer: string;
+    anonymous: boolean;
+  };
 }
 
 export class Question extends jspb.Message {
+  constructor();
+  constructor(opt_data?: Question.AsObject);
   getOpenQuestion(): OpenQuestion | undefined;
   setOpenQuestion(value?: OpenQuestion): Question;
   hasOpenQuestion(): boolean;
@@ -157,15 +163,15 @@ export class Question extends jspb.Message {
 
 export namespace Question {
   export type AsObject = {
-    openQuestion?: OpenQuestion.AsObject,
-    singleChoiceQuestion?: SingleChoiceQuestion.AsObject,
-    multipleChoiceQuestion?: MultipleChoiceQuestion.AsObject,
-    scaleQuestion?: ScaleQuestion.AsObject,
-    singleParameterQuestion?: SingleParameterQuestion.AsObject,
-    multipleParameterQuestion?: MultipleParameterQuestion.AsObject,
-  }
+    openQuestion?: OpenQuestion.AsObject;
+    singleChoiceQuestion?: SingleChoiceQuestion.AsObject;
+    multipleChoiceQuestion?: MultipleChoiceQuestion.AsObject;
+    scaleQuestion?: ScaleQuestion.AsObject;
+    singleParameterQuestion?: SingleParameterQuestion.AsObject;
+    multipleParameterQuestion?: MultipleParameterQuestion.AsObject;
+  };
 
-  export enum QuestionCase { 
+  export enum QuestionCase {
     QUESTION_NOT_SET = 0,
     OPEN_QUESTION = 1,
     SINGLE_CHOICE_QUESTION = 2,
@@ -177,6 +183,8 @@ export namespace Question {
 }
 
 export class OpenQuestion extends jspb.Message {
+  constructor();
+  constructor(opt_data?: OpenQuestion.AsObject);
   getQuestionText(): string;
   setQuestionText(value: string): OpenQuestion;
 
@@ -190,11 +198,13 @@ export class OpenQuestion extends jspb.Message {
 
 export namespace OpenQuestion {
   export type AsObject = {
-    questionText: string,
-  }
+    questionText: string;
+  };
 }
 
 export class SingleChoiceQuestion extends jspb.Message {
+  constructor();
+  constructor(opt_data?: SingleChoiceQuestion.AsObject);
   getQuestionText(): string;
   setQuestionText(value: string): SingleChoiceQuestion;
 
@@ -213,12 +223,14 @@ export class SingleChoiceQuestion extends jspb.Message {
 
 export namespace SingleChoiceQuestion {
   export type AsObject = {
-    questionText: string,
-    choicesList: Array<Choice.AsObject>,
-  }
+    questionText: string;
+    choicesList: Array<Choice.AsObject>;
+  };
 }
 
 export class MultipleChoiceQuestion extends jspb.Message {
+  constructor();
+  constructor(opt_data?: MultipleChoiceQuestion.AsObject);
   getQuestionText(): string;
   setQuestionText(value: string): MultipleChoiceQuestion;
 
@@ -237,12 +249,14 @@ export class MultipleChoiceQuestion extends jspb.Message {
 
 export namespace MultipleChoiceQuestion {
   export type AsObject = {
-    questionText: string,
-    choicesList: Array<Choice.AsObject>,
-  }
+    questionText: string;
+    choicesList: Array<Choice.AsObject>;
+  };
 }
 
 export class ScaleQuestion extends jspb.Message {
+  constructor();
+  constructor(opt_data?: ScaleQuestion.AsObject);
   getQuestionText(): string;
   setQuestionText(value: string): ScaleQuestion;
 
@@ -266,12 +280,14 @@ export class ScaleQuestion extends jspb.Message {
 
 export namespace ScaleQuestion {
   export type AsObject = {
-    questionText: string,
-    minValue?: ScaleQuestion.ScaleValue.AsObject,
-    maxValue?: ScaleQuestion.ScaleValue.AsObject,
-  }
+    questionText: string;
+    minValue?: ScaleQuestion.ScaleValue.AsObject;
+    maxValue?: ScaleQuestion.ScaleValue.AsObject;
+  };
 
   export class ScaleValue extends jspb.Message {
+    constructor();
+    constructor(opt_data?: ScaleValue.AsObject);
     getValue(): number;
     setValue(value: number): ScaleValue;
 
@@ -288,14 +304,16 @@ export namespace ScaleQuestion {
 
   export namespace ScaleValue {
     export type AsObject = {
-      value: number,
-      label: string,
-    }
+      value: number;
+      label: string;
+    };
   }
 
 }
 
 export class SingleParameterQuestion extends jspb.Message {
+  constructor();
+  constructor(opt_data?: SingleParameterQuestion.AsObject);
   getQuestionText(): string;
   setQuestionText(value: string): SingleParameterQuestion;
 
@@ -312,12 +330,14 @@ export class SingleParameterQuestion extends jspb.Message {
 
 export namespace SingleParameterQuestion {
   export type AsObject = {
-    questionText: string,
-    parameterType: string,
-  }
+    questionText: string;
+    parameterType: string;
+  };
 }
 
 export class MultipleParameterQuestion extends jspb.Message {
+  constructor();
+  constructor(opt_data?: MultipleParameterQuestion.AsObject);
   getQuestionText(): string;
   setQuestionText(value: string): MultipleParameterQuestion;
 
@@ -334,12 +354,14 @@ export class MultipleParameterQuestion extends jspb.Message {
 
 export namespace MultipleParameterQuestion {
   export type AsObject = {
-    questionText: string,
-    parameterType: string,
-  }
+    questionText: string;
+    parameterType: string;
+  };
 }
 
 export class Choice extends jspb.Message {
+  constructor();
+  constructor(opt_data?: Choice.AsObject);
   getSynonymsList(): Array<string>;
   setSynonymsList(value: Array<string>): Choice;
   clearSynonymsList(): Choice;
@@ -363,13 +385,15 @@ export class Choice extends jspb.Message {
 
 export namespace Choice {
   export type AsObject = {
-    synonymsList: Array<string>,
-    followUpQuestion?: Question.AsObject,
-    value: string,
-  }
+    synonymsList: Array<string>;
+    followUpQuestion?: Question.AsObject;
+    value: string;
+  };
 }
 
 export class Answer extends jspb.Message {
+  constructor();
+  constructor(opt_data?: Answer.AsObject);
   getQuestionNr(): number;
   setQuestionNr(value: number): Answer;
 
@@ -387,6 +411,8 @@ export class Answer extends jspb.Message {
 
   getAnonymous(): boolean;
   setAnonymous(value: boolean): Answer;
+  hasAnonymous(): boolean;
+  clearAnonymous(): Answer;
 
   getUserInformation(): Answer.UserInfo | undefined;
   setUserInformation(value?: Answer.UserInfo): Answer;
@@ -405,16 +431,18 @@ export class Answer extends jspb.Message {
 
 export namespace Answer {
   export type AsObject = {
-    questionNr: number,
-    sessionId: string,
-    answerText: string,
-    answerParameter: string,
-    answerParameterOriginal: string,
-    anonymous: boolean,
-    userInformation?: Answer.UserInfo.AsObject,
-  }
+    questionNr: number;
+    sessionId: string;
+    answerText: string;
+    answerParameter: string;
+    answerParameterOriginal: string;
+    anonymous?: boolean;
+    userInformation?: Answer.UserInfo.AsObject;
+  };
 
   export class UserInfo extends jspb.Message {
+    constructor();
+    constructor(opt_data?: UserInfo.AsObject);
     getFirstName(): string;
     setFirstName(value: string): UserInfo;
 
@@ -440,16 +468,16 @@ export namespace Answer {
 
   export namespace UserInfo {
     export type AsObject = {
-      firstName: string,
-      lastName: string,
-      phoneNumber: string,
-      sessionId: string,
-      userId: string,
-    }
+      firstName: string;
+      lastName: string;
+      phoneNumber: string;
+      sessionId: string;
+      userId: string;
+    };
   }
 
 
-  export enum IsAnonymousCase { 
+  export enum IsAnonymousCase {
     IS_ANONYMOUS_NOT_SET = 0,
     ANONYMOUS = 7,
     USER_INFORMATION = 6,
@@ -457,6 +485,8 @@ export namespace Answer {
 }
 
 export class CreateSurveyRequest extends jspb.Message {
+  constructor();
+  constructor(opt_data?: CreateSurveyRequest.AsObject);
   getSurvey(): Survey | undefined;
   setSurvey(value?: Survey): CreateSurveyRequest;
   hasSurvey(): boolean;
@@ -472,11 +502,13 @@ export class CreateSurveyRequest extends jspb.Message {
 
 export namespace CreateSurveyRequest {
   export type AsObject = {
-    survey?: Survey.AsObject,
-  }
+    survey?: Survey.AsObject;
+  };
 }
 
 export class GetSurveyRequest extends jspb.Message {
+  constructor();
+  constructor(opt_data?: GetSurveyRequest.AsObject);
   getSurveyId(): string;
   setSurveyId(value: string): GetSurveyRequest;
 
@@ -490,11 +522,13 @@ export class GetSurveyRequest extends jspb.Message {
 
 export namespace GetSurveyRequest {
   export type AsObject = {
-    surveyId: string,
-  }
+    surveyId: string;
+  };
 }
 
 export class UpdateSurveyRequest extends jspb.Message {
+  constructor();
+  constructor(opt_data?: UpdateSurveyRequest.AsObject);
   getSurvey(): Survey | undefined;
   setSurvey(value?: Survey): UpdateSurveyRequest;
   hasSurvey(): boolean;
@@ -515,12 +549,14 @@ export class UpdateSurveyRequest extends jspb.Message {
 
 export namespace UpdateSurveyRequest {
   export type AsObject = {
-    survey?: Survey.AsObject,
-    updateMask?: google_protobuf_field_mask_pb.FieldMask.AsObject,
-  }
+    survey?: Survey.AsObject;
+    updateMask?: google_protobuf_field_mask_pb.FieldMask.AsObject;
+  };
 }
 
 export class DeleteSurveyRequest extends jspb.Message {
+  constructor();
+  constructor(opt_data?: DeleteSurveyRequest.AsObject);
   getSurveyId(): string;
   setSurveyId(value: string): DeleteSurveyRequest;
 
@@ -534,22 +570,30 @@ export class DeleteSurveyRequest extends jspb.Message {
 
 export namespace DeleteSurveyRequest {
   export type AsObject = {
-    surveyId: string,
-  }
+    surveyId: string;
+  };
 }
 
 export class GetSurveyAnswersRequest extends jspb.Message {
+  constructor();
+  constructor(opt_data?: GetSurveyAnswersRequest.AsObject);
   getSurveyId(): string;
   setSurveyId(value: string): GetSurveyAnswersRequest;
 
   getSessionId(): string;
   setSessionId(value: string): GetSurveyAnswersRequest;
+  hasSessionId(): boolean;
+  clearSessionId(): GetSurveyAnswersRequest;
 
   getUserId(): string;
   setUserId(value: string): GetSurveyAnswersRequest;
+  hasUserId(): boolean;
+  clearUserId(): GetSurveyAnswersRequest;
 
   getUserPhoneNumber(): string;
   setUserPhoneNumber(value: string): GetSurveyAnswersRequest;
+  hasUserPhoneNumber(): boolean;
+  clearUserPhoneNumber(): GetSurveyAnswersRequest;
 
   getIdentifierCase(): GetSurveyAnswersRequest.IdentifierCase;
 
@@ -563,13 +607,13 @@ export class GetSurveyAnswersRequest extends jspb.Message {
 
 export namespace GetSurveyAnswersRequest {
   export type AsObject = {
-    surveyId: string,
-    sessionId: string,
-    userId: string,
-    userPhoneNumber: string,
-  }
+    surveyId: string;
+    sessionId?: string;
+    userId?: string;
+    userPhoneNumber?: string;
+  };
 
-  export enum IdentifierCase { 
+  export enum IdentifierCase {
     IDENTIFIER_NOT_SET = 0,
     SESSION_ID = 2,
     USER_ID = 3,
@@ -578,6 +622,8 @@ export namespace GetSurveyAnswersRequest {
 }
 
 export class GetAllSurveyAnswersRequest extends jspb.Message {
+  constructor();
+  constructor(opt_data?: GetAllSurveyAnswersRequest.AsObject);
   getSurveyId(): string;
   setSurveyId(value: string): GetAllSurveyAnswersRequest;
 
@@ -591,11 +637,13 @@ export class GetAllSurveyAnswersRequest extends jspb.Message {
 
 export namespace GetAllSurveyAnswersRequest {
   export type AsObject = {
-    surveyId: string,
-  }
+    surveyId: string;
+  };
 }
 
 export class SurveyAnswersResponse extends jspb.Message {
+  constructor();
+  constructor(opt_data?: SurveyAnswersResponse.AsObject);
   getSurveyId(): string;
   setSurveyId(value: string): SurveyAnswersResponse;
 
@@ -614,12 +662,14 @@ export class SurveyAnswersResponse extends jspb.Message {
 
 export namespace SurveyAnswersResponse {
   export type AsObject = {
-    surveyId: string,
-    answersList: Array<Answer.AsObject>,
-  }
+    surveyId: string;
+    answersList: Array<Answer.AsObject>;
+  };
 }
 
 export class ListSurveysRequest extends jspb.Message {
+  constructor();
+  constructor(opt_data?: ListSurveysRequest.AsObject);
   getPageToken(): string;
   setPageToken(value: string): ListSurveysRequest;
 
@@ -633,11 +683,13 @@ export class ListSurveysRequest extends jspb.Message {
 
 export namespace ListSurveysRequest {
   export type AsObject = {
-    pageToken: string,
-  }
+    pageToken: string;
+  };
 }
 
 export class ListSurveysResponse extends jspb.Message {
+  constructor();
+  constructor(opt_data?: ListSurveysResponse.AsObject);
   getSurveysList(): Array<Survey>;
   setSurveysList(value: Array<Survey>): ListSurveysResponse;
   clearSurveysList(): ListSurveysResponse;
@@ -656,12 +708,14 @@ export class ListSurveysResponse extends jspb.Message {
 
 export namespace ListSurveysResponse {
   export type AsObject = {
-    surveysList: Array<Survey.AsObject>,
-    nextPageToken: string,
-  }
+    surveysList: Array<Survey.AsObject>;
+    nextPageToken: string;
+  };
 }
 
 export class AgentSurveyRequest extends jspb.Message {
+  constructor();
+  constructor(opt_data?: AgentSurveyRequest.AsObject);
   getSurveyId(): string;
   setSurveyId(value: string): AgentSurveyRequest;
 
@@ -675,11 +729,13 @@ export class AgentSurveyRequest extends jspb.Message {
 
 export namespace AgentSurveyRequest {
   export type AsObject = {
-    surveyId: string,
-  }
+    surveyId: string;
+  };
 }
 
 export class AgentSurveyResponse extends jspb.Message {
+  constructor();
+  constructor(opt_data?: AgentSurveyResponse.AsObject);
   getParent(): string;
   setParent(value: string): AgentSurveyResponse;
 
@@ -693,11 +749,11 @@ export class AgentSurveyResponse extends jspb.Message {
 
 export namespace AgentSurveyResponse {
   export type AsObject = {
-    parent: string,
-  }
+    parent: string;
+  };
 }
 
-export enum SubFlow { 
+export enum SubFlow {
   SUBFLOW_UNSPECIFIED = 0,
   BOT = 1,
   LEGAL_ENTITY = 2,

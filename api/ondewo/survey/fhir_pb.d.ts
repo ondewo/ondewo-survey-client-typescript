@@ -6,6 +6,8 @@ import * as google_protobuf_struct_pb from 'google-protobuf/google/protobuf/stru
 
 
 export class CreateFHIRSurveyRequest extends jspb.Message {
+  constructor();
+  constructor(opt_data?: CreateFHIRSurveyRequest.AsObject);
   getFhirQuestionnaire(): google_protobuf_struct_pb.Struct | undefined;
   setFhirQuestionnaire(value?: google_protobuf_struct_pb.Struct): CreateFHIRSurveyRequest;
   hasFhirQuestionnaire(): boolean;
@@ -21,11 +23,13 @@ export class CreateFHIRSurveyRequest extends jspb.Message {
 
 export namespace CreateFHIRSurveyRequest {
   export type AsObject = {
-    fhirQuestionnaire?: google_protobuf_struct_pb.Struct.AsObject,
-  }
+    fhirQuestionnaire?: google_protobuf_struct_pb.Struct.AsObject;
+  };
 }
 
 export class SurveyFHIRAnswersResponse extends jspb.Message {
+  constructor();
+  constructor(opt_data?: SurveyFHIRAnswersResponse.AsObject);
   getSurveyId(): string;
   setSurveyId(value: string): SurveyFHIRAnswersResponse;
 
@@ -44,8 +48,8 @@ export class SurveyFHIRAnswersResponse extends jspb.Message {
 
 export namespace SurveyFHIRAnswersResponse {
   export type AsObject = {
-    surveyId: string,
-    fhirQuestionnaireResponsesList: Array<google_protobuf_struct_pb.Struct.AsObject>,
-  }
+    surveyId: string;
+    fhirQuestionnaireResponsesList: Array<google_protobuf_struct_pb.Struct.AsObject>;
+  };
 }
 
